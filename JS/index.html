@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio javaScript</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script src="../JS/scripts.js" defer></script>
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+   
+
+</head>
+<body>
+<div class="container">
+      <header>
+        <h1>Gerenciador de atividades</h1>
+      </header>
+        <form id="caixas">
+
+            <p>Adicione uma tarefa:</p>
+            <div class="form_control">
+                <input type="text" id="inputs" placeholder="O QUE VC VAI FAZER?"/>
+                <button type="submit">
+
+                    <i class="fa-thin fa-plus"></i>
+                   </button>
+            </div>
+        </form>
+        <form id="editform" class="hide">
+               <p>Edite a sua tarefa:</p>
+               <div class="form_control">
+                <input type="text" id="editinput"/>
+                <button type="submit">
+ 
+                 <i class="fa-solid fa-check-double"></i>
+               </div>
+
+               </button>
+               <button id="canceledit ">Cancelar</button>
+        </form>
+
+        <div id="tools">
+            <div id="search">
+                 <h4>Pesquisar</h4>
+                 <form >
+
+                    <input type="text" id="searchinput" placeholder="BUSCAR">
+                    <button id="erasebutton">
+
+                        <i class="fa solid fa-delete-left"></i>
+                    </Button>
+                 </form>
+            </div>
+         <div id="filtrar">
+
+            <h4>Filtrar:</h4>
+
+            <select id="filterselect">
+                <option value="all">Todos</option>
+                <option value="feitos">Realizados</option>
+                <option value="afazer">Incompletos</option>
+            </select>
+            
+         </div>
+        </div> 
+              <div class="todolist">
+                  <div class="todo">
+                    <h3>Trabalho de inglês</h3>
+                    <button class="finish">
+                       <i class="fa-solid fa-check"></i>
+                       <button class="edit">
+                        <i class="fa-solid fa-pen"></i>
+                        <button class="remove">
+                            <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+                  </div>
+                  <div class="todolist">
+                    <div class="todo">
+                      <h3>Faxina</h3>
+                      <button class="finish">
+                         <i class="fa-solid fa-check"></i>
+                         <button class="edit">
+                          <i class="fa-solid fa-pen"></i>
+                          <button class="remove">
+                              <i class="fa-solid fa-xmark"></i>
+  
+                      </button>
+                    </div>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

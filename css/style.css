@@ -1,0 +1,245 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgb(26, 8, 18);
+    font-family:Arial, Helvetica, sans-serif
+    
+
+
+}
+
+
+body{
+
+    height: 1000px;
+    background-image: url("../img/468739.jpg");
+    background-position: center;
+    background-size: cover;
+   
+
+
+}
+
+.container{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem  auto 0;
+    padding: 2rem;
+    background-color: rgb(236, 251, 250);
+    border-radius: 15px;
+    font-size: 18px;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    
+}
+
+button,button i {
+    padding: 5px;
+    background-color: crimson;
+    display: flex;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+button:hover>i {
+   
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+}
+button:hover {
+   
+  
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+}
+
+
+header{
+    border-radius: 15px;
+    text-align: center;
+    padding: 0 1rem 1rem ;
+    text-transform: uppercase;
+
+}
+
+
+
+
+input{
+    text-align: left;
+    padding: 5px;
+}
+
+
+
+.hide{
+
+    display: none;
+}
+
+
+.filtrar{
+    display: flex;
+}
+
+#canceledit{
+
+    width: 13%;
+}
+
+#caixas,#editform{
+    padding: 1rem;
+border-bottom: 1px solid silver;
+
+
+}
+
+#caixas p,#editform p{
+
+    margin-bottom: 10px;
+}
+
+#caixas p,#editform p{
+    padding: 0,5rem;
+    font-weight: bold;
+
+
+}
+
+.form_control{
+    display: flex;
+    
+}
+.form_control input{
+    margin-right: .8rem;
+    margin-bottom: 10px;
+    width: 50%;
+
+    
+  
+  
+}
+#canceledit{
+
+    width: 70px;
+    text-align: center;
+    padding: 10px;
+}
+#tools {
+   padding: 1rem;
+   border-bottom: 1px solid silver;
+   display: flex;
+
+}
+#tools h4{
+    margin-top: 0.5rem;
+    margin-bottom: .8rem;
+}
+
+#search{
+    width: 65%;
+    border-right: 1px solid silver;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#search form{
+    display: flex;
+}
+
+#search input{
+    margin-right: .5rem;
+    width: 100%;
+}
+
+#filtrar{
+
+   width: 30%;
+   display: flex;
+   flex-direction: column;
+}
+
+#filtrar select{
+    flex: 1;
+ }
+ 
+
+.todolist{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.todo {
+
+    display: flex;
+    justify-content: space-around;
+    margin-bottom:15px;
+    margin-top: 15px;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid silver;
+    transition-delay: 100ms;
+
+}
+.todo h3 {
+
+ flex: 1;
+
+}
+
+.todo button {
+
+    margin-right: 0.7rem;
+   
+   }
+   
+   .todo:hover {
+
+    border-bottom: 3px solid rgb(230, 17, 17);
+    left: 0;
+    transition: all 0.1s;
+
+}
+
+footer{
+    display: flex;
+    flex: 1;
+    height: 200px;
+    background-color: black;
+}
+.todo button i{
+
+    pointer-events: none;
+   
+   }
+
+.done{
+
+    background-color: rgb(30, 30, 60);
+}
+
+.done h3{
+
+    color: rgb(255, 255, 255);
+    text-decoration:line-through;
+    font-style: italic;
+}
+
+#editform{
+
+    display: none;
+
+}
+
+.hide{
+
+    display: flex;
+}
