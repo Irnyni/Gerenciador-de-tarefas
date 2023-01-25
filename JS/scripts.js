@@ -5,15 +5,40 @@ const editForm = document.querySelector("#editform");
 const editInput = document.querySelector("#editinput");
 const cancelEdition = document.querySelector("#canceledit");
 
+const toogleForms = () => {
+    editForm.classList.toggle("hide");
+    todoForm.classList.toggle("hide");
+    todoList.classList.toggle("hide");
+    let valorAntigo;
 
+};
+
+const updateTodo = (text) => {
+
+    const todos = document.querySelectorAll(".todo")
+
+    todos.forEach((todo)  => {
+
+        let todoti = todo.querySelector("h3");
+
+        if(todoti.innerText===valorAntigo){
+
+            todoti.innerText=text;
+
+        }
+
+    });
+}
    todoForm.addEventListener("submit" , (e) => {
 
     e.preventDefault();
     const inputValue = todoInput.value;
 
+
     const saveTodo = (text) => {
 
         const  todo =document.createElement("div")
+        let todotitle;
         todo.classList.add("todo")
 
 
@@ -39,10 +64,16 @@ const cancelEdition = document.querySelector("#canceledit");
         todoList.appendChild(todo);
         todoInput.value="";
         todoInput.focus();
-
+        const toogleForms = () => {
+            editForm.className("hide");
+            todoForm.className("hide");
+            todoList.className("hide")
+ 
+ 
+     }
 
     }
-
+ 
     if (inputValue){
 
         saveTodo(inputValue);
@@ -57,7 +88,14 @@ const cancelEdition = document.querySelector("#canceledit");
 
     const targetEl = e.target
     const parentEl = targetEl.closest("div");
+    let todotitle;
 
+    if(parentEl && parentEl.querySelector("h3")){
+
+        todotitle=parentEl.querySelector("h3").innerText;
+        console.log("entrei");
+
+    }
     if(targetEl.classList.contains("finish")){
 
         parentEl.classList.toggle("done");
@@ -73,12 +111,37 @@ const cancelEdition = document.querySelector("#canceledit");
     
     if(targetEl.classList.contains("edit")){
 
-        parentEl.classList.add("hide");
+        toogleForms();
 
+        editInput.value= todotitle;
+        valorAntigo=todotitle ;
+        editInput.focus();
 
     }
     
 });
 
 
+cancelEdition.addEventListener("click", (e) => {
 
+    e.preventDefault();
+    toogleForms();
+    console.log("cancelou");
+
+});
+
+editForm.addEventListener("submit" , (e) => {
+      
+    e.preventDefault();
+
+    const editinput= editInput.value;
+
+    if(editinput){
+
+        updateTodo(editinput);
+
+        }
+        toogleForms();
+
+
+    });

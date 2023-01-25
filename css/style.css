@@ -21,6 +21,8 @@ body{
 
 }
 
+
+
 .container{
     max-width: 500px;
     display: flex;
@@ -93,6 +95,7 @@ input{
 #caixas,#editform{
     padding: 1rem;
 border-bottom: 1px solid silver;
+transition-delay: 1500ms;
 
 
 }
@@ -124,9 +127,10 @@ border-bottom: 1px solid silver;
 }
 #canceledit{
 
-    width: 70px;
+    width: 77px;
     text-align: center;
-    padding: 10px;
+    padding: 8px;
+    text-align: center;
 }
 #tools {
    padding: 1rem;
@@ -233,13 +237,9 @@ footer{
     font-style: italic;
 }
 
-#editform{
 
-    display: none;
-
-}
 
 .hide{
 
-    display: flex;
+    display:none;
 }
