@@ -9,7 +9,6 @@
 
 }
 
-
 body{
 
     height: 1000px;
@@ -20,8 +19,6 @@ body{
 
 
 }
-
-
 
 .container{
     max-width: 500px;
@@ -68,11 +65,10 @@ header{
 }
 
 
-
-
 input{
     text-align: left;
     padding: 5px;
+    
 }
 
 
@@ -119,10 +115,7 @@ transition-delay: 1500ms;
 .form_control input{
     margin-right: .8rem;
     margin-bottom: 10px;
-    width: 50%;
-
-    
-  
+    width: 50%; 
   
 }
 #canceledit{
@@ -228,6 +221,7 @@ footer{
 .done{
 
     background-color: rgb(30, 30, 60);
+    border-radius: 20px;
 }
 
 .done h3{
@@ -243,3 +237,4 @@ footer{
 
     display:none;
 }
+

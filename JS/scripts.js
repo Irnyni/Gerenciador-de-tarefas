@@ -4,6 +4,9 @@ const todoList = document.querySelector(".todolist");
 const editForm = document.querySelector("#editform");
 const editInput = document.querySelector("#editinput");
 const cancelEdition = document.querySelector("#canceledit");
+const search =document.querySelector("tools");
+const buscarinput = document.querySelector("#searchinput");
+const buscarbtn = document.querySelector("erasebutton");
 
 const toogleForms = () => {
     editForm.classList.toggle("hide");
@@ -37,7 +40,7 @@ const updateTodo = (text) => {
 
     const saveTodo = (text) => {
 
-        const  todo =document.createElement("div")
+        const  todo =document.createElement("div");
         let todotitle;
         todo.classList.add("todo")
 
@@ -67,10 +70,18 @@ const updateTodo = (text) => {
         const toogleForms = () => {
             editForm.className("hide");
             todoForm.className("hide");
-            todoList.className("hide")
+            todoList.className("hide");
  
- 
+
      }
+
+     const buscarinput = document.createElement("searchinput");
+     const apagar = document.querySelector("erasebutton");
+
+
+
+
+
 
     }
  
@@ -122,6 +133,9 @@ const updateTodo = (text) => {
 });
 
 
+
+
+
 cancelEdition.addEventListener("click", (e) => {
 
     e.preventDefault();
@@ -145,3 +159,38 @@ editForm.addEventListener("submit" , (e) => {
 
 
     });
+
+
+
+   buscarinput.addEventListener("input", (e) => {
+        e.preventDefault();
+        let busca = e.target.value.toLowerCase();
+        console.log(busca);
+        const  todo =document.createElement("div");
+        const todos = document.querySelector(".afazeres")
+        let itemElement = todos.querySelectorAll("h3")
+
+        itemElement.forEach((h3)  => {
+             let text = h3.textContent.toLowerCase()    
+             if(busca){
+
+                       if(text.includes(busca)){
+                            
+                        console.log("achou");
+ 
+                       }
+                       else{
+                        console.log("letra nao consta");
+                       }
+
+
+             }
+
+    
+        });
+          
+      });
+    
+
+
+          
