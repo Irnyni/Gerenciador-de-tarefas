@@ -1,5 +1,6 @@
 const todoForm = document.querySelector("#caixas");
 const todoInput = document.querySelector("#inputs");
+const todoo =document.querySelector(".todo");
 const todoList = document.querySelector(".todolist");
 const editForm = document.querySelector("#editform");
 const editInput = document.querySelector("#editinput");
@@ -7,6 +8,7 @@ const cancelEdition = document.querySelector("#canceledit");
 const search =document.querySelector("tools");
 const buscarinput = document.querySelector("#searchinput");
 const buscarbtn = document.querySelector("erasebutton");
+const atividades =document.querySelector("afazeres")
 
 const toogleForms = () => {
     editForm.classList.toggle("hide");
@@ -40,29 +42,29 @@ const updateTodo = (text) => {
 
     const saveTodo = (text) => {
 
-        const  todo =document.createElement("div");
+        const todo = document.createElement("div");
         let todotitle;
-        todo.classList.add("todo")
+        todo.classList.add("todo");
 
 
         const todoTitle = document.createElement("h3")
         todoTitle.innerText= text
-        todo.appendChild(todoTitle)
-        console.log(todo)
+        todo.appendChild(todoTitle);
+        console.log(todo);
 
-        const buttonaccept = document.createElement("button")
-        buttonaccept.classList.add("finish")
+        const buttonaccept = document.createElement("button");
+        buttonaccept.classList.add("finish");
         buttonaccept.innerHTML ='<i class="fa-solid fa-check"></i>'
-        todo.appendChild(buttonaccept)
+        todo.appendChild(buttonaccept);
 
-        const buttonedit = document.createElement("button")
-        buttonedit.classList.add("edit")
+        const buttonedit = document.createElement("button");
+        buttonedit.classList.add("edit");
         buttonedit.innerHTML ='<i class="fa-solid fa-pen"></i>'
-        todo.appendChild(buttonedit)
-        const buttoneraser = document.createElement("button")
-        buttoneraser.classList.add("remove")
+        todo.appendChild(buttonedit);
+        const buttoneraser = document.createElement("button");
+        buttoneraser.classList.add("remove");
         buttoneraser.innerHTML ='<i class="fa-solid fa-xmark"></i>'
-        todo.appendChild(buttoneraser)
+        todo.appendChild(buttoneraser);
 
         todoList.appendChild(todo);
         todoInput.value="";
@@ -167,24 +169,28 @@ editForm.addEventListener("submit" , (e) => {
         let busca = e.target.value.toLowerCase();
         console.log(busca);
         const  todo =document.createElement("div");
+        
         const todos = document.querySelector(".afazeres")
         let itemElement = todos.querySelectorAll("h3")
 
         itemElement.forEach((h3)  => {
              let text = h3.textContent.toLowerCase()    
-             if(busca){
+      
 
                        if(text.includes(busca)){
-                            
+
+                        todoo.classList.toggle("hide");
                         console.log("achou");
  
                        }
                        else{
-                        console.log("letra nao consta");
+                        todoo.classList.add("hide");
+ 
                        }
+                
+                    
 
-
-             }
+                    
 
     
         });
