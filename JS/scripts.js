@@ -5,15 +5,16 @@ const todoList = document.querySelector(".todolist");
 const editForm = document.querySelector("#editform");
 const editInput = document.querySelector("#editinput");
 const cancelEdition = document.querySelector("#canceledit");
-const search =document.querySelector("tools");
+const search =document.querySelector("#tools");
 const buscarinput = document.querySelector("#searchinput");
 const buscarbtn = document.querySelector("erasebutton");
-const atividades =document.querySelector("afazeres")
+const atividades =document.querySelector(".afazeres")
 
 const toogleForms = () => {
     editForm.classList.toggle("hide");
     todoForm.classList.toggle("hide");
-    todoList.classList.toggle("hide");
+    atividades.classList.toggle("hide");
+    search.classList.toggle("hide");
     let valorAntigo;
 
 };
@@ -56,6 +57,7 @@ const updateTodo = (text) => {
         buttonaccept.classList.add("finish");
         buttonaccept.innerHTML ='<i class="fa-solid fa-check"></i>'
         todo.appendChild(buttonaccept);
+        console.log(todo);
 
         const buttonedit = document.createElement("button");
         buttonedit.classList.add("edit");
@@ -76,6 +78,8 @@ const updateTodo = (text) => {
  
 
      }
+
+
 
      const buscarinput = document.createElement("searchinput");
      const apagar = document.querySelector("erasebutton");
@@ -113,7 +117,7 @@ const updateTodo = (text) => {
 
         parentEl.classList.toggle("done");
 
-
+    
         
     }
     if(targetEl.classList.contains("remove")){
@@ -164,38 +168,53 @@ editForm.addEventListener("submit" , (e) => {
 
 
 
-   buscarinput.addEventListener("input", (e) => {
-        e.preventDefault();
-        let busca = e.target.value.toLowerCase();
-        console.log(busca);
-        const  todo =document.createElement("div");
+   buscarinput.addEventListener("input", function () {
+       
+    
+        let busca =this.value.toLowerCase();
+        /*let busca = e.target.value.toLowerCase();*/
+
+       
         
-        const todos = document.querySelector(".afazeres")
+        const todos = document.querySelector(".todolist")
         let itemElement = todos.querySelectorAll("h3")
+        const blocos = todos.querySelectorAll(".todo")
+       
 
+        
         itemElement.forEach((h3)  => {
-             let text = h3.textContent.toLowerCase()    
-      
+            const targetEl = h3
+            const parentEl = targetEl.closest("div");
+            let text = h3.textContent.toLowerCase()    
+            let i =0;
+                   blocos.forEach(todo => {
+                    console.log(blocos[i].innerText)
+                    if(text.includes(busca)){
+                       
 
-                       if(text.includes(busca)){
+                            parentEl.classList.remove("hide");
+                    
+                        
+                    }
+                  
+                else{
+                    parentEl.classList.add("hide");
+                     }
+});
+            });
+            
+ });
+        
 
-                        todoo.classList.toggle("hide");
-                        console.log("achou");
- 
-                       }
-                       else{
-                        todoo.classList.add("hide");
- 
-                       }
+             
+                     
                 
-                    
-
-                    
+                   
 
     
-        });
+    
           
-      });
+    
     
 
 

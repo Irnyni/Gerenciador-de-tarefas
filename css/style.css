@@ -232,8 +232,16 @@ footer{
 }
 
 
-todo.hide{
+.todo.hide{
 
     display: none;
 }
 
+#tools.hide{
+
+    display: none;
+}
+.todo.nhide{
+
+    display: flex;
+}
