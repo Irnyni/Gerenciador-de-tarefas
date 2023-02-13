@@ -184,6 +184,7 @@ transition-delay: 1500ms;
     padding: 1rem;
     border-bottom: 1px solid silver;
     transition-delay: 100ms;
+    transition: all 0.7s;
 
 }
 .todo h3 {

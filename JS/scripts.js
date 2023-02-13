@@ -8,11 +8,13 @@ const cancelEdition = document.querySelector("#canceledit");
 const search =document.querySelector("#tools");
 const buscarinput = document.querySelector("#searchinput");
 const buscarbtn = document.querySelector("erasebutton");
-const atividades =document.querySelector(".afazeres")
+const atividades =document.querySelector(".afazeres");
+const filtros = document.querySelector("#filterselect");
+
 
 const toogleForms = () => {
     editForm.classList.toggle("hide");
-    todoForm.classList.toggle("hide");
+    todoForm.classList.toggle("hide");s
     atividades.classList.toggle("hide");
     search.classList.toggle("hide");
     let valorAntigo;
@@ -188,13 +190,9 @@ editForm.addEventListener("submit" , (e) => {
             let text = h3.textContent.toLowerCase()    
             let i =0;
                    blocos.forEach(todo => {
-                    console.log(blocos[i].innerText)
+                    console.log(blocos[i].innerText);
                     if(text.includes(busca)){
-                       
-
-                            parentEl.classList.remove("hide");
-                    
-                        
+                            parentEl.classList.remove("hide");   
                     }
                   
                 else{
@@ -207,7 +205,23 @@ editForm.addEventListener("submit" , (e) => {
         
 
              
-                     
+      filtros.addEventListener("change",()=>{
+
+        var select = document.getElementById("filterselect");
+        var opcaoTexto = select.options[select.selectedIndex].text;
+        const todos = document.querySelector(".todolist")
+        let itemElement = todos.querySelectorAll(".todo")
+        if(opcaoTexto==="realizado"){
+            if(itemElement.classList.text==="done"){
+                
+            itemElement.classList.remove("hide");
+            }
+        }
+
+        
+        console.log(opcaoTexto);
+        
+      })     ;          
                 
                    
 
