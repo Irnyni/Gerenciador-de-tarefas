@@ -211,15 +211,52 @@ editForm.addEventListener("submit" , (e) => {
         var opcaoTexto = select.options[select.selectedIndex].text;
         const todos = document.querySelector(".todolist")
         let itemElement = todos.querySelectorAll(".todo")
-        if(opcaoTexto==="realizado"){
-            if(itemElement.classList.text==="done"){
-                
-            itemElement.classList.remove("hide");
-            }
-        }
+
+
+        itemElement.forEach((todo)  => {
+            const targetEl = todo
+            const parentEl = targetEl.closest("todo");
+
+
+                   itemElement.forEach(todo => {
+
+                    if (opcaoTexto==="Realizados"){
+
+                                if(targetEl.classList.contains("done")){
+                                    console.log("MOSTRAR")
+                                        targetEl.classList.remove("hide");   
+                                }
+                                else{
+                                    console.log("ESCONDER")
+                                    targetEl.classList.add("hide");    
+                                }
+                    }
+
+
+                                        if (opcaoTexto==="Incompletos"){
+
+                                                        if(targetEl.classList.contains("done")){
+                                                            console.log("ESCONDER")
+                                                                targetEl.classList.add("hide");   
+                                                        }
+                                                        else{
+                                                            console.log("MOSTRAR")
+                                                            targetEl.classList.remove("hide");    
+                                                        }
+                                        }
+                    if (opcaoTexto==="Todos"){
+
+                                targetEl.classList.remove("hide");   
+                        }
+
+
+});
+            });
+
+
 
         
-        console.log(opcaoTexto);
+       
         
       })     ;          
                 
