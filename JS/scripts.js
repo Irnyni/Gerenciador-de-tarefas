@@ -14,7 +14,7 @@ const filtros = document.querySelector("#filterselect");
 
 const toogleForms = () => {
     editForm.classList.toggle("hide");
-    todoForm.classList.toggle("hide");s
+    todoForm.classList.toggle("hide");
     atividades.classList.toggle("hide");
     search.classList.toggle("hide");
     let valorAntigo;
@@ -86,12 +86,10 @@ const updateTodo = (text) => {
      const buscarinput = document.createElement("searchinput");
      const apagar = document.querySelector("erasebutton");
 
-
-
-
-
-
     }
+
+
+    
  
     if (inputValue){
 
@@ -171,102 +169,103 @@ editForm.addEventListener("submit" , (e) => {
 
 
    buscarinput.addEventListener("input", function () {
-       
+
     
         let busca =this.value.toLowerCase();
-        /*let busca = e.target.value.toLowerCase();*/
-
-       
-        
-        const todos = document.querySelector(".todolist")
-        let itemElement = todos.querySelectorAll("h3")
-        const blocos = todos.querySelectorAll(".todo")
-       
-
-        
-        itemElement.forEach((h3)  => {
-            const targetEl = h3
-            const parentEl = targetEl.closest("div");
-            let text = h3.textContent.toLowerCase()    
-            let i =0;
-                   blocos.forEach(todo => {
-                    console.log(blocos[i].innerText);
-                    if(text.includes(busca)){
-                            parentEl.classList.remove("hide");   
-                    }
-                  
-                else{
-                    parentEl.classList.add("hide");
-                     }
-});
-            });
-            
+        buscar(busca);
  });
         
 
              
       filtros.addEventListener("change",()=>{
+       buscar(this.busca);
+       filtro();
 
-        var select = document.getElementById("filterselect");
-        var opcaoTexto = select.options[select.selectedIndex].text;
-        const todos = document.querySelector(".todolist")
-        let itemElement = todos.querySelectorAll(".todo")
-
-
-        itemElement.forEach((todo)  => {
-            const targetEl = todo
-            const parentEl = targetEl.closest("todo");
-
-
-                   itemElement.forEach(todo => {
-
-                    if (opcaoTexto==="Realizados"){
-
-                                if(targetEl.classList.contains("done")){
-                                    console.log("MOSTRAR")
-                                        targetEl.classList.remove("hide");   
-                                }
-                                else{
-                                    console.log("ESCONDER")
-                                    targetEl.classList.add("hide");    
-                                }
-                    }
+      })     ;          
+                
+      const filtro = () => {
+          
+      var select = document.getElementById("filterselect");
+      var opcaoTexto = select.options[select.selectedIndex].text;
+      const todos = document.querySelector(".todolist")
+      let itemElement = todos.querySelectorAll(".todo")
 
 
-                                        if (opcaoTexto==="Incompletos"){
+      itemElement.forEach((todo)  => {
+          const targetEl = todo
+          const parentEl = targetEl.closest("todo");
 
-                                                        if(targetEl.classList.contains("done")){
-                                                            console.log("ESCONDER")
-                                                                targetEl.classList.add("hide");   
-                                                        }
-                                                        else{
-                                                            console.log("MOSTRAR")
-                                                            targetEl.classList.remove("hide");    
-                                                        }
-                                        }
-                    if (opcaoTexto==="Todos"){
 
-                                targetEl.classList.remove("hide");   
-                        }
+                 itemElement.forEach(todo => {
+
+                  if (opcaoTexto==="Realizados"){
+
+                              if(targetEl.classList.contains("done")){
+                                     if(targetEl.classList.contains("hide")){
+
+                                         console.log("esconder")
+                                     }
+
+                                      console.log("MOSTRAR")
+                                      targetEl.classList.remove("hide");   
+                              }
+                              else{
+                                  console.log("ESCONDER")
+                                  targetEl.classList.add("hide");    
+                              }
+                  }
+
+
+                                      if (opcaoTexto==="Incompletos"){
+
+                                                      if(targetEl.classList.contains("done")){
+                                                          console.log("ESCONDER")
+                                                              targetEl.classList.add("hide");   
+                                                      }
+                                                      else{
+                                                          console.log("MOSTRAR")
+                                                          targetEl.classList.remove("hide");    
+                                                      }
+                                      }
+                  if (opcaoTexto==="Todos"){
+
+                              targetEl.classList.remove("hide");   
+                      }
 
 
 });
-            });
+          });
+
+ }
 
 
+function buscar(busca){
 
-        
-       
-        
-      })     ;          
-                
-                   
-
-    
-    
-          
-    
-    
+ /*let busca = e.target.value.toLowerCase();*/
 
 
-          
+ 
+ const todos = document.querySelector(".todolist")
+ let itemElement = todos.querySelectorAll("h3")
+ const blocos = todos.querySelectorAll(".todo")
+
+
+ 
+ itemElement.forEach((h3)  => {
+     const targetEl = h3
+     const parentEl = targetEl.closest("div");
+     let text = h3.textContent.toLowerCase()    
+     let i =0;
+            blocos.forEach(todo => {
+             console.log(blocos[i].innerText);
+             if(text.includes(busca)){  
+                     parentEl.classList.remove("hide");   
+             }
+           
+         else{
+             parentEl.classList.add("hide");
+              }
+});
+     });
+
+    }
